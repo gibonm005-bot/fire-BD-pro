@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FIRE BD - Play &amp; Earn | Download App</title>
+<meta name="description" content="FIRE BD - Bangladesh er premium Free Fire tournament app. Match khelo, jitо, earn koro.">
+<meta name="theme-color" content="#020a06">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="assets/favicon-fb.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--red:#ff2b1a;--org:#ff8a00;--gold:#ffc93c;--grn:#0da55b;--bg:#07070a;--card:#111117;--line:rgba(255,255,255,.08);--tx:#f3f3f6;--mut:#9a9aa8}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins','Hind Siliguri',sans-serif;background:var(--bg);color:var(--tx);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+#embers{position:fixed;inset:0;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 20px}
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(7,7,10,.72);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:1px}
+.brand img{width:38px;height:38px;border-radius:50%;border:2px solid var(--red);box-shadow:0 0 14px rgba(255,43,26,.5)}
+.brand span{background:linear-gradient(90deg,var(--red),var(--org),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.navlinks{display:flex;gap:24px;font-size:14px;color:var(--mut)}
+.navlinks a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:15px;color:#fff;padding:14px 26px;border-radius:16px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn-fire{background:linear-gradient(135deg,var(--red),var(--org));box-shadow:0 10px 30px rgba(255,80,20,.4)}
+.btn-fire::after{content:"";position:absolute;top:0;left:-70%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3s ease-in-out infinite}
+.btn-grn{background:linear-gradient(135deg,#0a8a4c,var(--grn));box-shadow:0 10px 30px rgba(13,165,91,.35)}
+.btn-ghost{background:rgba(255,255,255,.06);border:1px solid var(--line)}
+.btn-sm{padding:9px 18px;font-size:13px;border-radius:12px}
+/* hero */
+.hero{padding:70px 0 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:30px;border:1px solid rgba(255,138,0,.4);background:rgba(255,138,0,.08);color:var(--gold);font-size:12px;font-weight:600;letter-spacing:1px}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--grn);box-shadow:0 0 8px var(--grn);animation:blink 1.4s infinite}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.05;font-weight:900;margin:20px 0 18px;letter-spacing:-1px}
+h1 .g{background:linear-gradient(90deg,var(--red),var(--org) 50%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 .gr{color:var(--grn)}
+.lead{color:var(--mut);font-size:16px;max-width:480px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 26px}
+.trust{display:flex;gap:26px;flex-wrap:wrap}
+.trust b{display:block;font-size:24px;font-weight:800;color:#fff}
+.trust small{color:var(--mut);font-size:12px}
+/* phone */
+.stage{position:relative;display:flex;justify-content:center;padding:20px 0}
+.stage::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(255,60,20,.45),transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);filter:blur(20px);animation:pulse 3s ease-in-out infinite}
+.phone{position:relative;width:270px;height:550px;border-radius:42px;padding:10px;background:linear-gradient(160deg,#2a2a33,#0c0c10);box-shadow:0 30px 70px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.12);animation:float 5s ease-in-out infinite;transform:rotate(-4deg)}
+.screen{width:100%;height:100%;border-radius:33px;overflow:hidden;background:#0a0a0e;position:relative;padding:38px 14px 14px}
+.notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:80px;height:20px;background:#000;border-radius:12px}
+.ring{width:74px;height:74px;margin:6px auto 8px;border-radius:50%;padding:3px;background:conic-gradient(var(--red),var(--grn),var(--gold),var(--red));animation:spin 6s linear infinite;box-shadow:0 0 22px rgba(255,43,26,.5)}
+.ring img{width:100%;height:100%;border-radius:50%;border:2px solid #000;display:block;animation:spin 6s linear infinite reverse}
+.screen h4{text-align:center;font-size:13px;font-weight:800;letter-spacing:2px;margin-bottom:12px}
+.mc{background:var(--card);border:1px solid rgba(255,90,31,.2);border-radius:14px;padding:10px 12px;margin-bottom:9px;display:flex;justify-content:space-between;align-items:center;font-size:11px}
+.mc b{display:block;font-size:12px}.mc small{color:var(--mut)}
+.mc em{font-style:normal;font-weight:700;font-size:10px;padding:6px 12px;border-radius:9px;background:linear-gradient(135deg,var(--red),var(--org))}
+.mc .p{color:var(--gold);font-weight:700}
+.chip{position:absolute;z-index:2;background:rgba(17,17,23,.9);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.chip i{color:var(--gold)}
+.c1{top:60px;left:0;animation:float 4s ease-in-out infinite}
+.c2{bottom:90px;right:-6px;animation:float 5s ease-in-out .8s infinite}
+/* sections */
+section{padding:70px 0}
+.sh{text-align:center;margin-bottom:46px}
+.sh small{color:var(--org);font-weight:700;letter-spacing:3px;font-size:12px}
+.sh h2{font-size:clamp(26px,4vw,40px);font-weight:800;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:linear-gradient(160deg,#15151c,#0e0e13);border:1px solid var(--line);border-radius:22px;padding:26px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(255,106,26,.5);box-shadow:0 18px 40px rgba(255,80,20,.15)}
+.ic{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;background:linear-gradient(135deg,rgba(255,43,26,.2),rgba(255,138,0,.15));color:var(--org)}
+.card:nth-child(even) .ic{background:linear-gradient(135deg,rgba(13,165,91,.22),rgba(13,165,91,.08));color:var(--grn)}
+.card h3{font-size:17px;margin-bottom:6px}.card p{color:var(--mut);font-size:14px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.step{position:relative;padding:28px 24px 24px;border-radius:22px;background:var(--card);border:1px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-16px;left:22px;width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;background:linear-gradient(135deg,var(--red),var(--org));box-shadow:0 8px 20px rgba(255,80,20,.4)}
+.step h3{font-size:16px;margin-bottom:6px}.step p{color:var(--mut);font-size:13.5px}
+.dl{border-radius:30px;padding:54px 28px;text-align:center;background:radial-gradient(ellipse 80% 90% at 50% 0,rgba(255,60,20,.28),transparent 70%),linear-gradient(160deg,#1a0d08,#0b0b10);border:1px solid rgba(255,106,26,.35);position:relative;overflow:hidden}
+.dl h2{font-size:clamp(26px,4vw,38px);font-weight:800;margin-bottom:10px}
+.dl p{color:var(--mut);max-width:480px;margin:0 auto 26px}
+.dl .cta{justify-content:center;margin:0}
+.note{margin-top:18px;font-size:12px;color:var(--mut)}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::after{content:"+";color:var(--org);font-size:22px;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mut);font-size:14px;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:30px 0 40px;text-align:center;color:var(--mut);font-size:13px;position:relative;z-index:1}
+footer .brand{justify-content:center;margin-bottom:10px}
+.social{display:flex;gap:12px;justify-content:center;margin:14px 0}
+.social a{width:42px;height:42px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line);transition:.3s}
+.social a:hover{background:linear-gradient(135deg,var(--red),var(--org));transform:translateY(-3px)}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+.hide{display:none!important}
+#toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);z-index:200;background:#111117;border:1px solid rgba(255,138,0,.5);color:#fff;padding:12px 20px;border-radius:14px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:.35s;box-shadow:0 14px 40px rgba(0,0,0,.6);max-width:90vw;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#guide{position:fixed;inset:0;z-index:150;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.75);backdrop-filter:blur(6px)}
+#guide.show{display:flex}
+#guide .box{width:100%;max-width:380px;border-radius:24px;padding:28px 24px;text-align:center;background:linear-gradient(160deg,#1b0c06,#0a0a0d 65%,#000);border:1px solid rgba(255,106,26,.4);box-shadow:0 20px 60px rgba(255,90,31,.25)}
+#guide h3{font-size:20px;margin-bottom:6px}#guide p{color:var(--mut);font-size:14px;margin-bottom:16px}
+#guide ol{text-align:left;margin:0 0 20px 20px;color:#ddd;font-size:14px;line-height:1.9}
+#guide .btn{width:100%;margin-top:8px}
+@keyframes float{50%{transform:translateY(-14px) rotate(-4deg)}}
+.c1,.c2{--r:0deg}
+.c1{animation-name:cf}.c2{animation-name:cf}
+@keyframes cf{50%{transform:translateY(-12px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{opacity:.6;transform:translate(-50%,-50%) scale(1.15)}}
+@keyframes blink{50%{opacity:.3}}
+@keyframes shine{0%{left:-70%}60%,100%{left:140%}}
+@media(max-width:820px){.hero{grid-template-columns:1fr;text-align:center;padding-top:40px}.lead{margin:auto}.cta,.trust{justify-content:center}.navlinks{display:none}.c1{left:4%}.c2{right:2%}}
+
+/* ===== new FB BANGLADESH logo ===== */
+.brand img{border-radius:10px;border:1px solid rgba(13,165,91,.6);box-shadow:0 0 14px rgba(13,165,91,.45)}
+.brand span{font-size:15px;white-space:nowrap}
+.ring{border-radius:22%}
+.ring img{border-radius:20%;object-fit:cover}
+</style>
+</head>
+<body>
+<canvas id="embers"></canvas>
+<nav><div class="wrap">
+  <a class="brand" href="#top"><img src="assets/logo-fb.png" alt=""><span>FIRE BD</span></a>
+  <div class="navlinks"><a href="#features">Features</a><a href="#how">How to Install</a><a href="#faq">FAQ</a></div>
+  <a class="btn btn-fire btn-sm" href="#download">Download</a>
+</div></nav>
+
+<main id="top" class="wrap">
+  <div class="hero">
+    <div>
+      <div class="pill"><i></i> LIVE TOURNAMENTS EVERY DAY</div>
+      <h1><span class="g">FIRE</span> <span class="gr">BD</span><br>Play. Win. Earn.</h1>
+      <p class="lead">Bangladesh er #1 premium Free Fire tournament app. Daily match khelo, room ID ekhanei pao, jitле prize sathe sathe wallet e.</p>
+      <div class="cta">
+        <button class="btn btn-fire" onclick="installApp()"><i class="fas fa-download instIc"></i> <span class="instLbl">Install App</span></button>
+        <a class="btn btn-ghost" href="app/index.html"><i class="fas fa-play"></i> Open Web App</a>
+      </div>
+      <div class="trust">
+        <div><b data-n="1560" data-s="">0</b><small>Users</small></div>
+        <div><b data-n="30" data-s=" Min">0</b><small>Withdraw Time</small></div>
+        <div><b>24/7</b><small>Support</small></div>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="chip c1"><i class="fas fa-trophy"></i> Winner Prize sent!</div>
+      <div class="phone"><div class="screen"><div class="notch"></div>
+        <div class="ring"><img src="assets/logo-fb.png" alt=""></div>
+        <h4>FIRE BD</h4>
+        <div class="mc"><div><b>Solo Survival</b><small>Prize <span class="p">&#2547;500</span> &bull; 48 slots</small></div><em>JOIN</em></div>
+        <div class="mc"><div><b>Duo Rush</b><small>Prize <span class="p">&#2547;1200</span> &bull; 24 slots</small></div><em>JOIN</em></div>
+        <div class="mc"><div><b>Squad War</b><small>Prize <span class="p">&#2547;3000</span> &bull; 12 slots</small></div><em>JOIN</em></div>
+        <div class="mc"><div><b>Clash Squad</b><small>Prize <span class="p">&#2547;800</span> &bull; 8 slots</small></div><em>JOIN</em></div>
+      </div></div>
+      <div class="chip c2"><i class="fas fa-bolt"></i> Withdraw in 30 Minutes</div>
+    </div>
+  </div>
+
+  <div class="mq"><div class="mq-in"><span><i class="fas fa-bolt"></i> 30 Min Withdraw</span><span><i class="fas fa-trophy"></i> Daily Prize Pool</span><span><i class="fas fa-shield-halved"></i> Secure Login</span><span><i class="fas fa-bell"></i> Live Room ID</span><span><i class="fas fa-headset"></i> 24/7 Support</span><span><i class="fas fa-mobile-screen"></i> No Play Store Needed</span><span><i class="fas fa-bolt"></i> 30 Min Withdraw</span><span><i class="fas fa-trophy"></i> Daily Prize Pool</span><span><i class="fas fa-shield-halved"></i> Secure Login</span><span><i class="fas fa-bell"></i> Live Room ID</span><span><i class="fas fa-headset"></i> 24/7 Support</span><span><i class="fas fa-mobile-screen"></i> No Play Store Needed</span></div></div>
+
+  <section id="features">
+    <div class="sh rv"><small>WHY FIRE BD</small><h2>Premium experience, gamer er jonno</h2></div>
+    <div class="grid">
+      <div class="card rv"><div class="ic"><i class="fas fa-fire"></i></div><h3>Daily Tournaments</h3><p>Solo, Duo, Squad, Clash Squad - roj notun match ar boro prize pool.</p></div>
+      <div class="card rv"><div class="ic"><i class="fas fa-wallet"></i></div><h3>Easy Wallet</h3><p>Add money sohoj, ar withdraw request korle 30 minute er moddhe payment pabens.</p></div>
+      <div class="card rv"><div class="ic"><i class="fas fa-shield-halved"></i></div><h3>Safe &amp; Fair</h3><p>Secure login, Firebase protected data ar transparent result.</p></div>
+      <div class="card rv"><div class="ic"><i class="fas fa-bell"></i></div><h3>Live Notifications</h3><p>Room ID, password ar admin notice miss korben na.</p></div>
+      <div class="card rv"><div class="ic"><i class="fas fa-bolt"></i></div><h3>Super Fast</h3><p>Halka app, offline shell ar smooth animation.</p></div>
+      <div class="card rv"><div class="ic"><i class="fas fa-headset"></i></div><h3>24/7 Support</h3><p>Kono somossha hole Telegram e sathe sathe help.</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="sh rv"><small>3 EASY STEPS</small><h2>Kivabe install korben</h2></div>
+    <div class="steps">
+      <div class="step rv"><h3>Install App</h3><p>Upor er "Install App" button chapun. Chrome e "Install" dialog ashbe.</p></div>
+      <div class="step rv"><h3>Register</h3><p>Google ba email diye 1 minute e account khulun, notification allow korun.</p></div>
+      <div class="step rv"><h3>Play &amp; Earn</h3><p>Match join korun, room ID niye khelun ar prize wallet e nin.</p></div>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="dl rv">
+      <div class="ring" style="width:90px;height:90px;margin:0 auto 20px"><img src="assets/logo-fb.png" alt=""></div>
+      <h2>Ekhoni <span style="color:var(--org)">FIRE BD</span> download korun</h2>
+      <p>Free. Kono Play Store lagbe na - shorasori home screen e install hobe.</p>
+      <div class="cta">
+        <button class="btn btn-fire" onclick="installApp()"><i class="fas fa-download instIc"></i> <span class="instLbl">Install App</span></button>
+        <a class="btn btn-ghost tg hide" href="#"><i class="fab fa-telegram"></i> Join Telegram</a>
+      </div>
+      <div class="note" id="ios-note">iPhone e: Safari te khule Share &rarr; "Add to Home Screen" chapun.</div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="sh rv"><small>FAQ</small><h2>Prosno &amp; Uttor</h2></div>
+    <div class="rv" style="max-width:720px;margin:auto">
+      <details><summary>App ta ki free?</summary><p>Ha, install ar register dutoi free. Shudhu match join korar entry fee lage.</p></details>
+      <details><summary>Install button kaj korche na?</summary><p>Chrome browser use korun ar site ta HTTPS e khulun. Na hole Chrome menu (&#8942;) theke "Install app" bachun.</p></details>
+      <details><summary>Withdraw korle koto somoy lage?</summary><p>Withdraw request dile 30 minute er moddhe apnar bKash/Nagad/Rocket number e taka pathano hoy.</p></details>
+      <details><summary>Prize kivabe pabo?</summary><p>Match sesh hole prize automatic wallet e jog hoy, tarpor Withdraw diye tule nin.</p></details>
+      <details><summary>Notification ashche na?</summary><p>Phone settings theke FIRE BD er notification Allow ache kina dekhun.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="brand"><img src="assets/logo-fb.png" alt=""><span>FIRE BD</span></div>
+  <div class="social"><a class="tg hide" href="#"><i class="fab fa-telegram"></i></a><a class="sp hide" href="#"><i class="fas fa-headset"></i></a></div>
+  &copy; <span id="yr"></span> FIRE BD. All rights reserved.<br>Play responsibly.
+</footer>
+
+<div class="mbar"><button class="btn btn-fire" onclick="installApp()"><i class="fas fa-download instIc"></i> <span class="instLbl">Install App</span></button></div>
+<div id="toast"></div>
+<div id="guide" onclick="if(event.target===this)closeGuide()"><div class="box">
+  <i class="fas fa-mobile-screen-button" style="font-size:36px;color:var(--org);margin-bottom:12px"></i>
+  <h3>App install korun</h3><p id="guide-p"></p>
+  <ol id="guide-ol"></ol>
+  <a class="btn btn-fire" href="app/index.html"><i class="fas fa-play"></i> Web App khulun</a>
+  <button class="btn btn-ghost" onclick="closeGuide()">Bondho</button>
+</div></div>
+<script src="config.js"></script>
+<script>
+var C=window.FIRE_CONFIG||{};
+function setLink(sel,url){document.querySelectorAll(sel).forEach(function(a){if(url){a.href=url;a.target='_blank';a.rel='noopener';a.classList.remove('hide')}})}
+setLink('.tg',C.TELEGRAM_URL);setLink('.sp',C.SUPPORT_URL);
+document.getElementById('yr').textContent=new Date().getFullYear();
+var isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
+var isStandalone=['standalone','fullscreen','minimal-ui'].some(function(m){return matchMedia('(display-mode: '+m+')').matches})||window.navigator.standalone===true;
+if(isStandalone){try{localStorage.setItem('fireInstalled','1')}catch(e){}location.replace('app/index.html');}
+if('serviceWorker' in navigator&&location.protocol!=='file:'){addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}
+var deferred=null;
+addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;try{localStorage.removeItem('fireInstalled')}catch(x){}showInstall()});
+addEventListener('appinstalled',function(){deferred=null;try{localStorage.setItem('fireInstalled','1')}catch(e){}showOpen();toast('App install hoye gese! Home screen e dekhun.')});
+if(C.APK_URL&&!isIOS){document.querySelectorAll('.instLbl').forEach(function(x){x.textContent='Download App'});document.querySelectorAll('.instIc').forEach(function(x){x.className='fab fa-android instIc'})}
+// App already install kora thakle "Install" er jaygay "Open App" dekhabe
+function showOpen(){document.querySelectorAll('button[onclick="installApp()"]').forEach(function(b){b.setAttribute('onclick',"location.href='app/index.html'");var l=b.querySelector('.instLbl'),i=b.querySelector('.instIc');if(l)l.textContent='Open App';if(i)i.className='fas fa-play instIc'});var g=document.getElementById('how');if(g)g.style.display='none';document.querySelectorAll('a[href="#how"]').forEach(function(a){a.style.display='none'})}
+function showInstall(){if(document.body.getAttribute('data-open')!=='1')return;location.reload()}
+var wasInst=false;try{wasInst=localStorage.getItem('fireInstalled')==='1'}catch(e){}
+if(wasInst){showOpen();document.body.setAttribute('data-open','1')}
+if(navigator.getInstalledRelatedApps){navigator.getInstalledRelatedApps().then(function(a){if(a&&a.length){try{localStorage.setItem('fireInstalled','1')}catch(e){}showOpen()}}).catch(function(){})}
+var tt;function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show')},3500)}
+function closeGuide(){document.getElementById('guide').classList.remove('show')}
+function openGuide(){
+  var ol=document.getElementById('guide-ol'),p=document.getElementById('guide-p');
+  if(isIOS){p.textContent='iPhone e Safari diye khule:';ol.innerHTML='<li>Niche <b>Share</b> button chapun</li><li><b>Add to Home Screen</b> chapun</li><li><b>Add</b> chapun</li>'}
+  else{p.textContent='Chrome browser e HTTPS site theke:';ol.innerHTML='<li>Chrome er <b>&#8942;</b> menu chapun</li><li><b>Install app</b> ba <b>Add to Home screen</b> chapun</li><li><b>Install</b> confirm korun</li>'}
+  document.getElementById('guide').classList.add('show')}
+function installApp(){
+  if(C.APK_URL&&!isIOS){var a=document.createElement('a');a.href=C.APK_URL;a.setAttribute('download','FIRE-BD.apk');a.rel='noopener';document.body.appendChild(a);a.click();a.remove();toast('Download shuru hoyeche... APK ta install korun.');return}
+  if(deferred){var d=deferred;deferred=null;d.prompt();d.userChoice.then(function(r){if(r.outcome==='accepted')toast('App install hocche...')});return}
+  openGuide()}
+if(!isIOS)document.getElementById('ios-note').classList.add('hide');
+// reveal
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%3)*.1+'s';io.observe(el)});
+// counters
+document.querySelectorAll('[data-n]').forEach(function(el){var t=+el.dataset.n,s=el.dataset.s||'',n=0,st=t/60;var iv=setInterval(function(){n+=st;if(n>=t){n=t;clearInterval(iv)}el.textContent=Math.floor(n).toLocaleString()+s},25)});
+// embers
+(function(){var c=document.getElementById('embers'),x=c.getContext('2d'),P=[],W,H;
+function rs(){W=c.width=innerWidth;H=c.height=innerHeight}rs();addEventListener('resize',rs);
+function mk(){return{x:Math.random()*W,y:H+10,r:Math.random()*2.2+.6,v:Math.random()*.9+.3,d:Math.random()*.6-.3,a:Math.random()*.6+.3,g:Math.random()<.25}}
+for(var i=0;i<45;i++){var p=mk();p.y=Math.random()*H;P.push(p)}
+(function f(){x.clearRect(0,0,W,H);P.forEach(function(p,i){p.y-=p.v;p.x+=p.d+Math.sin(p.y/40)*.3;p.a-=.0015;if(p.y<-10||p.a<=0)P[i]=mk();x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle=p.g?'rgba(13,165,91,'+p.a+')':'rgba(255,'+(90+p.r*30|0)+',20,'+p.a+')';x.shadowBlur=10;x.shadowColor=p.g?'#0da55b':'#ff5a1f';x.fill()});requestAnimationFrame(f)})()})();
+</script>
+<style>
+#sfab{position:fixed;z-index:60;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;color:#fff;font-size:23px;background:linear-gradient(135deg,var(--red),var(--org));box-shadow:0 10px 28px rgba(255,80,20,.5);display:flex;align-items:center;justify-content:center}
+#smenu{position:fixed;z-index:60;right:16px;bottom:calc(84px + env(safe-area-inset-bottom,0px));width:250px;background:#15151c;border:1px solid var(--line);border-radius:18px;padding:8px;box-shadow:0 18px 40px rgba(0,0,0,.6);display:none}
+#smenu.show{display:block}
+#smenu a{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px}
+#smenu a:hover{background:rgba(255,255,255,.06)}
+#smenu .ic{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+#smenu b{display:block;font-size:14px}#smenu small{font-size:11px;color:var(--mut)}
+</style>
+<button type="button" id="sfab" aria-label="Support"><i class="fas fa-headset"></i></button>
+<div id="smenu">
+  <a id="s-tg" href="#" target="_blank" rel="noopener"><span class="ic" style="background:#229ed9"><i class="fab fa-telegram-plane"></i></span><span><b>Telegram Support</b><small>Telegram e message korun</small></span></a>
+  <a href="app/index.html#support"><span class="ic" style="background:linear-gradient(135deg,var(--red),var(--org))"><i class="fas fa-comments"></i></span><span><b>App Support Chat</b><small>App e login kore chat korun</small></span></a>
+</div>
+<script>
+(function(){var C=window.FIRE_CONFIG||{},u=C.SUPPORT_URL||C.TELEGRAM_URL,t=document.getElementById('s-tg');
+if(u){t.href=u}else{t.style.display='none'}
+var f=document.getElementById('sfab'),m=document.getElementById('smenu');
+f.onclick=function(){m.classList.toggle('show')};
+document.addEventListener('click',function(e){if(!e.target.closest('#smenu')&&!e.target.closest('#sfab'))m.classList.remove('show')});})();
+</script>
+<style id="premium-v30">
+body{background:#050507}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(60% 45% at 12% 0%,rgba(255,60,20,.24),transparent 70%),radial-gradient(45% 40% at 95% 18%,rgba(255,40,110,.17),transparent 70%),radial-gradient(60% 45% at 50% 105%,rgba(255,170,0,.13),transparent 70%)}
+nav{top:10px;max-width:1060px;margin:10px auto 0;border:1px solid rgba(255,255,255,.1);border-radius:20px;background:rgba(14,14,20,.62);backdrop-filter:blur(20px) saturate(1.4);box-shadow:0 14px 40px -12px rgba(0,0,0,.7)}
+nav .wrap{height:58px}
+.hero{padding:84px 0 50px}
+h1{font-size:clamp(38px,6.6vw,68px)!important;line-height:1.04!important;letter-spacing:-1.5px;font-weight:900}
+.lead{font-size:16.5px;color:#b4b4c2}
+.pill{background:linear-gradient(90deg,rgba(255,60,20,.16),rgba(255,170,0,.1));border-color:rgba(255,138,0,.5)}
+.btn{border-radius:18px;padding:15px 28px}
+.btn-fire{background:linear-gradient(135deg,#ff3d1a,#ff8a00);box-shadow:0 14px 36px -8px rgba(255,80,20,.65),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn-ghost{background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14)}
+.trust{padding:14px 18px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);display:inline-flex;gap:26px}
+.stage{position:relative}
+.stage::before{content:"";position:absolute;inset:8% 6%;border-radius:50%;background:radial-gradient(circle,rgba(255,80,20,.45),transparent 68%);filter:blur(40px);z-index:0}
+.phone{position:relative;z-index:1;animation:phFloat 6s ease-in-out infinite;box-shadow:0 40px 80px -20px rgba(255,70,20,.55),0 0 0 1px rgba(255,255,255,.14)!important}
+@keyframes phFloat{50%{transform:translateY(-14px)}}
+.mc{background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.08)!important;border-radius:14px!important}
+.chip{backdrop-filter:blur(14px);background:rgba(20,20,28,.72)!important;border:1px solid rgba(255,255,255,.14)!important;box-shadow:0 12px 30px -8px rgba(0,0,0,.6)}
+.mq{overflow:hidden;margin:26px -20px 6px;border-block:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025);-webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.mq-in{display:flex;width:max-content;animation:mqs 30s linear infinite}
+.mq-in span{padding:14px 26px;font-size:13px;font-weight:600;color:#c9c9d6;white-space:nowrap}
+.mq-in i{color:#ff8a00;margin-right:8px}
+@keyframes mqs{to{transform:translateX(-50%)}}
+.sh h2{font-size:clamp(26px,4.4vw,40px);font-weight:800;letter-spacing:-.8px}
+.sh small{color:#ff8a00;letter-spacing:3px;font-weight:700}
+.card{background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.015))!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:24px!important;backdrop-filter:blur(10px);transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-8px);border-color:rgba(255,120,30,.55)!important;box-shadow:0 24px 50px -20px rgba(255,80,20,.55)}
+.card .ic{background:linear-gradient(135deg,#ff3d1a,#ff9500)!important;color:#fff!important;border-radius:16px!important;box-shadow:0 10px 24px -8px rgba(255,80,20,.7)}
+.step{background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.012))!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:24px!important}
+.dl{position:relative;border-radius:32px!important;background:radial-gradient(80% 120% at 50% 0%,rgba(255,80,20,.32),rgba(17,17,23,.92) 70%)!important;border:1px solid rgba(255,138,0,.4)!important;box-shadow:0 40px 90px -30px rgba(255,70,20,.6)}
+details{background:rgba(255,255,255,.04)!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:18px!important;backdrop-filter:blur(8px)}
+details[open]{border-color:rgba(255,138,0,.5)!important}
+footer{border-top:1px solid rgba(255,255,255,.07)}
+.mbar{display:none}
+@media(max-width:700px){.hero{padding:44px 0 30px}.mq{margin-inline:-20px}
+.mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(180deg,transparent,rgba(5,5,7,.92) 40%);transform:translateY(110%);transition:transform .35s}
+.mbar.on{transform:none}.mbar .btn{width:100%}#sfab{bottom:84px!important}}
+@media(prefers-reduced-motion:reduce){.phone,.mq-in{animation:none!important}}
+</style>
+<script>addEventListener("scroll",function(){var b=document.querySelector(".mbar");if(b)b.classList.toggle("on",scrollY>420&&scrollY<document.body.scrollHeight-innerHeight-700)},{passive:true})</script>
+</body>
+</html>
